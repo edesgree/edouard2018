@@ -1,0 +1,51 @@
+/**********************************************************************************************
+Title: CSS inyattawetrust
+Author: Edouard Desgrée
+Date: 2016
+***********************************************************************************************/
+@charset "utf-8";
+
+@-webkit-viewport{width:device-width}
+@-moz-viewport{width:device-width}
+@-ms-viewport{width:device-width}
+@-o-viewport{width:device-width}
+@viewport{width:device-width}
+
+// Bootstrap
+@import "import/bootstrap/bt-variables.less";     //variables pour bt
+@import "import/bootstrap/bt-bootstrap.less";
+@import "import/bootstrap/bt-custom.less";
+
+//variables
+@import "import/variables.less";
+
+//fonts
+@import "import/fonts.less";
+@import "import/type.less";
+
+@import (reference) "./import/elements.less";
+@import (reference) "./import/flexbox.less";
+
+// import utils
+//@import "./utils/magnific-popup.less";
+//@import "../../bower_components/slick.js/slick/slick.css";
+//@import "../../bower_components/slick.js/slick/slick-theme.css";
+@import "../../bower_components/fontawesome/css/font-awesome.min.css";
+
+//fullpage.js
+@import "../../bower_components/fullpage.js/dist/jquery.fullpage.min.css";
+
+@import "../css/scrolling-nav.css";
+//import style principal
+
+
+
+    @import "import/scaffolding.less";//Règles elements communs
+
+    @import "utils/img-lazy-load.less";
+    @import "utils/flexbox-snippet.less";
+
+    @import "main.less";
+    @import "header.less";
+    @import "footer.less";
+

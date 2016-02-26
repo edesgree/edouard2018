@@ -1,0 +1,325 @@
+/******************************************************************
+*
+* Main #Solofilms
+* Author : Version10.ca 2016
+*
+******************************************************************/
+html,body{
+    font-family: @font-family-base;
+    font-size: 14px;
+    font-size: @font-size-base;
+    line-height: @line-height-base;
+    color:@text-color;
+    background-color: @body-bg;
+    margin: 0;
+    padding: 0;
+    height:100%;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+    /* 3. LAYOUT
+    *******************************************************************/
+    #main{
+        background: #fff;
+        min-height: 300px;
+    }
+    #sidebar{
+        background: #383838;
+        min-height: 260px;
+    }
+    .jumbotron{
+        background: #fff;
+        h1{
+            font-size: @font-size-h1;
+        }
+        p{
+            font-size: 1.2em;
+            @media @mobile{
+                font-size: @font-size-base;
+            }
+        }
+    }
+    .round6{
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    /* COMMON
+    *******************************************************************/
+    section{
+        margin-bottom: 40px;
+        header{
+            background: @c-greyDark;
+            padding: 15px 0;
+            color:#fff;
+            margin-bottom: 40px;
+            h1{margin: 0;}
+        }
+        h1{
+            margin-bottom: 40px;
+        }
+        article{
+            padding: 40px;
+            background: #fff;
+            margin-bottom: 40px;
+            @media @mobile{
+                padding: 40px 0 0 0;
+            }
+        }
+    }
+
+    /* HOME VIDEO
+    *******************************************************************/
+    /*solves problem with overflowing video in Mac with Chrome */
+    section#home{
+        overflow: hidden;
+        @media @notMobile{
+            height:100vh;
+        }
+    }
+    .home-video{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        top:0;
+        right:0;
+        width: 100%;
+        height: 100%;
+        background-size: 100% 100%;
+        background-color: black; /* in case the video doesn't fit the whole page*/
+        //background-image: /* our video */;
+        background-position: center center;
+        background-size: contain;
+        object-fit: cover; /*cover video background */
+        z-index:3;
+        &#home-video-trailer{
+            display: none;
+        }
+    }
+    .overlay-video{
+        height: 100%;
+        text-align: center;
+        z-index: 999;
+        overflow: hidden;
+        position: relative;
+        .go-down{
+            position:absolute;
+            bottom: 20px;
+            left: 50%;
+            .transform(translate(-50%,00%));
+            color:#fff;
+            z-index: 999;
+        }
+        .elements-center{
+            position:absolute;
+            top:60%;
+            left: 50%;.opacity(0.3);
+            &:hover{.opacity(1);}
+            .transition();
+            .transform(translate(-50%,-50%));
+            z-index: 999;
+        }
+        .play-btn{
+            color:#fff;
+            i{
+                font-size: 8em;
+                @media @mobile{font-size: 4em;}
+            }
+        }
+    }
+
+
+    /* A propos
+    *******************************************************************/
+    section#about{
+        figure{
+            text-align: center;
+            figcaption{
+                h6{margin-bottom: 0;}
+            }
+
+        }
+    }
+
+
+    /* Projets
+    *******************************************************************/
+    section#projects{
+        img{
+            height: 50%;
+        }
+        figure.img-wrapper{
+            position: relative;
+            overflow:hidden;
+            width:100%;
+            margin:0;
+            .transition(.3s all ease);
+            .label-diag{
+                .ribbon(@height:30px;@width:200px;@rotate:45deg;@bgcolor:@c-primary;);
+                z-index: 99;
+                color:#fff;
+            }
+            img{
+                position:relative;
+                display:block;
+                width:100%;
+                margin:0;
+                .transition(.3s all ease);
+            }
+            figcaption{
+                position:absolute;
+                top:0;right:0;bottom:0;left:0;
+                overflow:hidden;
+                .transition(.36s all ease);
+
+                .bottom-detail{
+                    display:table-cell;
+                    width:100%;
+                    height:100%;
+                    padding:25px;
+                    .transition(.25s all ease .1s);
+                    .transform(0,105%);
+                    vertical-align:middle;
+                    h3{
+                        position:relative;
+                        bottom:0;
+                        margin:0 auto;
+                        text-align:center;
+                        .opacity(0);
+                        color:@c-primary;
+                        font-size:2.1em
+                    }
+                    p{
+                        margin:0px !important;
+                        padding:5px;
+                        text-align:center;
+                        .opacity(0);
+                        color:#fff;
+                        font-size:1.27em;
+                        font-weight:500
+                    }
+                }
+            }
+            &:hover{
+                img{
+                    .transform(scale(1.1,1.1));
+                }
+                figcaption{
+                    background: fade(#000, 80%);
+
+                    .bottom-detail{
+                        .transform(scale(1.1,1.1));
+                        h3{
+                            .transition(.2s all ease);
+                            .opacity(1);
+                        }
+                        p{
+                            top:0;
+                            .transition(.2s all ease);
+                            .opacity(1);
+                        }
+                    }
+                }
+            }
+        }
+        figure .bottom-wrap{
+            display:table;
+            width:100%;
+            height:100%
+        }
+    }
+    section.project-detail{
+        position:absolute;
+        top: 200px;
+        left: 0;
+        z-index: 999;
+        overflow: hidden;
+        background: #fff;
+        margin-bottom: 40px;
+        width: 100%;
+        nav{
+            position: relative;
+            z-index: 99;
+            a{
+                position:absolute;
+                top: 340px;
+                @media @mobile{top:10px;}
+                &.nav-next{
+                    right: 0;
+                    @media @mobile{
+                        right: 35%;
+                    }
+                }
+                &.nav-prev{
+                    left: 0;
+
+                    @media @mobile{
+                        left: 35%;
+                    }
+                }
+                &.nav-close{
+                    right: 0;
+                    top: 10px;
+                }
+            }
+        }
+        [data-project-detail-content]{
+            position: relative;
+        }
+        article{
+            width: 100%;
+            .media{margin-bottom: 40px;}
+        }
+
+        #carousel-photo{
+            .carousel-control{
+                i{
+                    position:absolute;
+                    top: 50%;
+                    .transform(translate(0,-50%));
+                }
+                &.left{
+                    i{
+                        left: 10px;
+                    }
+                }
+                &.right{
+                    i{
+                        right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .scrollup {
+        background: url("@{path}icones/icon-top.png") no-repeat scroll 0 0 transparent;
+        bottom: 50px;
+        display: none;
+        height: 40px;
+        .opacity(0.3);
+        position: fixed;
+        right: 30px;
+        width: 40px;
+        z-index: 9999;
+        @media @mobile{display: none!important;}
+    }
+
+    //Animation BUTTONS
+    [data-animation="magnify"]:not(.magnify){
+      .transition(100ms ease-in-out);
+      &:hover{
+        .transform(scale(0.9));
+      }
+    }
+    [data-animation="magnify"].magnify{
+      .transition(200ms ease-in-out);
+      .transform(scale(1.6));
+      opacity:0;
+    }
+    button:focus{outline:none;}

@@ -1,0 +1,41 @@
+/******************************************************************
+*
+* Img lazy load
+*
+******************************************************************/
+*[data-bg-loaded-container]{
+    background: #000 url("@{path}loader.gif@{v}") no-repeat center center;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    width: auto;
+    height: 100%;
+
+    & > [data-bg-loaded-img]{
+        .transition();
+        .opacity(0);
+        .absolute(1);
+        .size(100%, 100%);
+        background-size: cover;
+        background-position: center center;
+    }
+
+    & > [data-img] {
+        .transition();
+        .opacity(0);
+        //.size(100%, 100%);
+        width:100%;
+    }
+
+    &.bg-loaded {
+        background: #000;
+
+        & > [data-bg-loaded-img]{
+            .opacity(1);
+        }
+
+        & > [data-img] {
+            .opacity(0.9);
+        }
+    }
+}

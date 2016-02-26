@@ -1,0 +1,107 @@
+/******************************************************************
+*
+* HEADER
+*
+******************************************************************/
+header#main-header{
+    background: @c-grey;
+    @media @mobile{
+        padding-top: 70px;
+    }
+    //menu
+    .navbar{
+
+        padding: 40px 0;
+        .box-shadow(0px 2px 5px 0px rgba(0,0,0,0.2));
+        margin: 0;
+        @media @mobile{
+            padding: 10px 0;
+
+        }
+        .navbar-header{
+            height: auto;
+            .navbar-brand{
+                padding: 0;
+                padding-left: 15px;
+                @media @mobile{
+                    height: 45px;
+                    img{height: 100%;}
+                }
+            }
+            //hamburger icon animation
+            .navbar-toggle {
+                border: none;
+                background: transparent !important;
+                &:hover {
+                    background: transparent !important;
+                }
+                .icon-bar {
+                    width: 22px;
+                    .transition(all 0.2s);
+                    &:nth-of-type(1) {
+                        .transform(rotate(45deg));
+                        .transform-origin(10% 10%);
+                    }
+                    &:nth-of-type(2) {
+                        .opacity(0);
+                    }
+                    &:nth-of-type(3) {
+                        .transform(rotate(-45deg));
+                        .transform-origin(10% 90%);
+                    }
+                }
+                &.collapsed {
+                    .icon-bar {
+                        &:nth-of-type(1){
+                            .transform(rotate(0));
+                        }
+                        &:nth-of-type(2) {
+                            .opacity(1);
+                        }
+                        &:nth-of-type(3) {
+                            .transform(rotate(0));
+                        }
+                    }
+                }
+            }
+
+        }
+	    .navbar-nav{
+            @media @notMobile{
+                float: right;
+            }
+    		li{
+    			a{
+    				text-transform: uppercase;
+    				color: @c-grey;
+    				font-family: @font-primary;
+    				&:hover{
+    					color:@c-greyLight;
+    					text-decoration: none;
+    				}
+    			}
+    			&.lang{
+                    padding: 10px;
+                    a{
+                        background: fade(@c-primary, 48%);
+                        color:#fff;
+                        padding:2px 5px;
+                        font-size: .75em;
+                        &:hover{
+                            background: @c-greyLight;
+                        }
+                    }
+                    @media @mobile{
+                        display:inline-block;zoom: 1;*display: inline;
+                    }
+                }
+    		}
+	    }
+        @media @notMobile{
+            .transition(  .5s ease-in-out);
+            &.top-nav-collapse {
+                padding: 10px 0;
+            }
+        }
+    }
+}

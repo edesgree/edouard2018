@@ -1,0 +1,46 @@
+/* MODALS
+------------------------------------------------------------------------------------------------ */
+.modal{
+	z-index: 99999;
+	.modal-header{
+		background:@c-primary;
+    	color:#fff;
+    	font:900  23px/25px   @font-primary;
+    	letter-spacing:1px;
+    	padding:15px;
+    	position:relative;
+    	.modal-title{text-transform: uppercase;}
+	}
+	.close{
+		.opacity(1);
+		color:#fff;
+		text-shadow:0 1px 0 #000;
+	}
+	.modal-body{
+		//max-height: 500px;
+		//overflow-y: auto;
+	}
+}
+
+
+//no gap between columns
+.row-no-padding {
+	& > [class*="col-"] {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+}
+.bt-block {
+    padding: 0;
+    height: 380px;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+}
+//btn
+.btn{
+	&:hover{
+		text-decoration: none;
+	}
+	&.btn-info,&.btn-warning,&.btn-primary,&.btn-success{color:#fff;}
+}

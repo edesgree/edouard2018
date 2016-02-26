@@ -1,0 +1,212 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+
+// Reset the box-sizing
+
+*,
+*:before,
+*:after {
+  .box-sizing(border-box);
+}
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+// Reset unusual Firefox-on-Android default style.
+
+button,
+input,
+select[multiple],
+textarea {
+  background-image: none;
+}
+
+
+// Links
+
+a {
+  color: @link-color;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+	color: @link-hover-color;
+	text-decoration: underline;
+  }
+  &.white{color:#fff;}
+}
+
+iframe{
+  border: none;
+  border-width: 0px;
+}
+
+// Images
+
+img {
+  vertical-align: middle;
+}
+
+/* General Elements
+===============================================================================================*/
+.floatright { float: right !important;}
+.floatleft { float: left !important;}
+.block { display: block !important;}
+.inline { display: inline !important;}
+.displaynone{display:none !important;}
+.nofloat { float: none !important;}
+.selection(@select-txt, @select-bg);
+
+.group:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.clearfix() {
+	&:before,
+	&:after {
+		content: " "; // 1
+		display: table; // 2
+	}
+	&:after {
+		clear: both;
+	}
+}
+hr {
+	border: 0px #666 solid;
+	border-top-width: 1px;
+	clear: both;
+	height: 0;
+	margin:20px 0;
+	&.dotted {border-top: 1px #9b9b9b dotted!important;}
+}
+
+.center{text-align:center;}
+.right{text-align: right!important}
+.left{text-align: left!important;}
+
+.box-inline-bloc {
+    margin: 0;
+    padding: 10px;
+
+    &>*{
+        display:inline-block; *display:inline; zoom:1;
+        vertical-align: top;
+        margin: 0 10px;
+    }
+}
+
+.disabled {
+    cursor:default;
+    .opacity(0.3);
+}
+
+.relative { position: relative; }
+.w100{width: 100%;}
+.mauto{margin:0 auto;}
+
+/* Spacing
+----------------------------------------------------------------------------------------------------*/
+.m0     { margin: 0!important;}
+.p0     { padding: 0!important;}
+
+.mt0    { margin-top: 0px !important;}
+.mt5    { margin-top: 5px !important;}
+.mt10   { margin-top: 10px !important;}
+.mt20   { margin-top: 20px !important;}
+.mt30   { margin-top: 30px !important;}
+
+.mb0    { margin-bottom: 0 !important;}
+.mb5    { margin-bottom: 5 !important;}
+.mb10   { margin-bottom: 10px !important;}
+.mb20   { margin-bottom: 20px !important;}
+.mb30   { margin-bottom: 30px !important;}
+
+.mr0    { margin-right: 0px !important;}
+.mr5    { margin-right: 5px !important;}
+.mr10   { margin-right: 10px !important;}
+.mr20   { margin-right: 20px !important;}
+.mr30   { margin-right: 30px !important;}
+
+.ml0    { margin-left: 0px !important;}
+.ml5    { margin-left: 5px !important;}
+.ml10   { margin-left: 10px !important;}
+.ml20   { margin-left: 20px !important;}
+.ml30   { margin-left: 30px !important;}
+
+.pt0    { padding-top: 0px !important;}
+.pt5    { padding-top: 5px !important;}
+.pt10   { padding-top: 10px !important;}
+.pt20   { padding-top: 20px !important;}
+.pt30   { padding-top: 30px !important;}
+
+.pb0    { padding-bottom: 0 !important;}
+.pb5    { padding-bottom: 5 !important;}
+.pb10   { padding-bottom: 10px !important;}
+.pb20   { padding-bottom: 20px !important;}
+.pb30   { padding-bottom: 30px !important;}
+
+.pr0    { padding-right: 0px !important;}
+.pr5    { padding-right: 5px !important;}
+.pr10   { padding-right: 10px !important;}
+.pr20   { padding-right: 20px !important;}
+.pr30   { padding-right: 30px !important;}
+
+.pl0    { padding-left: 0px !important;}
+.pl5    { padding-left: 5px !important;}
+.pl10   { padding-left: 10px !important;}
+.pl20   { padding-left: 20px !important;}
+.pl30   { padding-left: 30px !important;}
+
+
+
+
+
+/* Greensock animations
+===============================================================================================*/
+*[data-gs-popIn]{ .opacity(0)}
+
+*[data-gs-popIn],
+*[data-gs-hover-effect="push"] {
+    position: relative;
+}
+
+/* Buttons
+===============================================================================================*/
+
+a.open {
+  display: block;
+  position: relative;
+  width: 34px;
+  height: 34px;
+  .opacity(0.9);
+  .transition(transform 0.25s);
+  &:before,&:after{
+    position: absolute;
+    left: 16px;
+    content: ' ';
+    height: 35px;
+    width: 3px;
+    background-color: @c-primary;
+  }
+  &:before{
+    .transform(rotate(90deg));
+  }
+  &.active {
+    .transition(transform 0.5s);
+    .transform(rotate(135deg));
+  }
+  &:hover {
+    text-decoration: none;
+    .opacity(1);
+  }
+}
+

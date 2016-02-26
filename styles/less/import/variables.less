@@ -1,0 +1,60 @@
+// VARIABLES
+// -------------------------
+
+@path: ~"../../images/";
+@v:    ~"?v=1";
+
+
+// Typography (inspiré de bootstrap.)
+// -------------------------
+@font-primary:          'Josefin Sans', sans-serif;
+@font-secondary:        'Montserrat', sans-serif;
+
+//** Global text color on `<body>`.
+@text-color:			#6c6c6c;
+@body-bg:               @c-greyLighter;
+
+//** Text Selection color
+@select-txt: 			#fff;
+@select-bg: 			@c-primary;
+
+// Colors
+// -------------------------
+@c-primary:				#a30134;
+@c-grey:				#9D9D9D;
+@c-greyDarker:			darken(@c-grey, 20%);
+@c-greyDark:			#212426;
+@c-greyLight:			#96a5b1;
+@c-greyLighter:			#f8f8f8;
+@c-error:				red;
+
+//social color
+@c-fb: 					#3b5998;
+@c-tw: 		 			#4099FF;
+
+// BOOTSTRAP LAYOUT
+// -------------------------
+
+// Layout
+@screen-sm:                  768px;
+@screen-md:                  1024px;
+@screen-lg:                  1394px;
+
+@grid-gutter-width:          30px;
+
+@container-tablet:           (720px + @grid-gutter-width);
+@container-desktop:          (980px + @grid-gutter-width);
+@container-large-desktop:    (1370px + @grid-gutter-width);
+
+
+// media queries
+@hd:~"only screen and (min-width:@{screen-lg})";
+
+@desktop:~"only screen and (max-width:@{screen-md-max})";
+@desktopOnly:~"only screen and (min-width: @{screen-md}) and (max-width:@{screen-md-max})";
+
+@tablet:~"only screen and (max-width: @{screen-sm-max})";
+@tabletOnly:~"only screen and (min-width: @{screen-sm}) and (max-width: @{screen-sm-max})";
+
+@mobile:~"only screen and (max-width: @{screen-xs-max})";
+@notMobile:~"only screen and (min-width: @{screen-sm})";
