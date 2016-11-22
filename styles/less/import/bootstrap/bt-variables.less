@@ -14,7 +14,7 @@
 @gray-light:             lighten(@gray-base, 46.7%); // #777
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
-@brand-primary:         darken(@c-primary, 6.5%);
+@brand-primary:         @c-primary;
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
@@ -31,9 +31,9 @@
 @text-color:            @gray-dark;
 
 //** Global textual link color.
-@link-color:            @brand-primary;
+@link-color:            @c-primary;
 //** Link hover color set via `darken()` function.
-@link-hover-color:      darken(@link-color, 15%);
+@link-hover-color:      lighten(@link-color, 15%);
 //** Link hover decoration.
 @link-hover-decoration: underline;
 
@@ -43,7 +43,7 @@
 //## Font, line-height, and color for body text, headings, and more.
 
 @font-family-sans-serif:  @font-primary;
-@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-serif:       @font-secondary;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
@@ -52,7 +52,7 @@
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
-@font-size-h1:            floor((@font-size-base * 2.5)); // ~36px
+@font-size-h1:            floor((@font-size-base * 2.0)); // ~36px
 @font-size-h2:            floor((@font-size-base * 1.8)); // ~30px
 @font-size-h3:            ceil((@font-size-base * 1.6)); // ~24px
 @font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
@@ -68,7 +68,7 @@
 @headings-font-family:    @font-primary;
 @headings-font-weight:    700;
 @headings-line-height:    1.1;
-@headings-color:          inherit;
+@headings-color:          @gray;
 
 
 //== Iconography
@@ -364,16 +364,16 @@
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 @navbar-collapse-max-height:       340px;
 
-@navbar-default-color:             #fff;
-@navbar-default-bg:                @c-greyDark;
+@navbar-default-color:             #777;
+@navbar-default-bg:                #fff;
 @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
 
 // Navbar links
 @navbar-default-link-color:                #777;
 @navbar-default-link-hover-color:          #333;
 @navbar-default-link-hover-bg:             transparent;
-@navbar-default-link-active-color:         #555;
-@navbar-default-link-active-bg:            darken(@navbar-default-bg, 6.5%);
+@navbar-default-link-active-color:         @c-red;
+@navbar-default-link-active-bg:            transparent;
 @navbar-default-link-disabled-color:       #ccc;
 @navbar-default-link-disabled-bg:          transparent;
 
@@ -820,7 +820,7 @@
 //
 //##
 
-@close-font-weight:           bold;
+@close-font-weight:           bold; 
 @close-color:                 #000;
 @close-text-shadow:           0 1px 0 #fff;
 

@@ -1,15 +1,9 @@
+@charset "utf-8";
 /**********************************************************************************************
 Title: CSS inyattawetrust
 Author: Edouard Desgrée
 Date: 2016
 ***********************************************************************************************/
-@charset "utf-8";
-
-@-webkit-viewport{width:device-width}
-@-moz-viewport{width:device-width}
-@-ms-viewport{width:device-width}
-@-o-viewport{width:device-width}
-@viewport{width:device-width}
 
 // Bootstrap
 @import "import/bootstrap/bt-variables.less";     //variables pour bt
@@ -27,17 +21,15 @@ Date: 2016
 @import (reference) "./import/flexbox.less";
 
 // import utils
-//@import "./utils/magnific-popup.less";
-//@import "../../bower_components/slick.js/slick/slick.css";
-//@import "../../bower_components/slick.js/slick/slick-theme.css";
-@import "../../bower_components/fontawesome/css/font-awesome.min.css";
+//Font Awesome
+@import "@{path-bower}font-awesome/less/font-awesome.less";
+@fa-font-path: ~"../../bower_components/font-awesome/fonts/";
 
 //fullpage.js
 
 @import "../css/scrolling-nav.css";
 //import style principal
 
-//
 
     @import "import/scaffolding.less";//Règles elements communs
 
