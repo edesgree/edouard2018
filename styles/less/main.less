@@ -90,7 +90,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, img, main {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
 
     display: block
 
@@ -151,7 +151,10 @@ a:focus, img:focus, button:focus, .btn:focus {outline: none;}
 @font-face {font-family: 'Open Sans', sans-serif;}
 
 /*===== Header ===*/
-
+.logo{
+    width: 100px;
+    height: 100px;
+}
 header[role="header"]{ 
     padding-top:80px; padding-bottom:39px;
 
@@ -218,12 +221,12 @@ main[role="main-home-wrapper"],main[role="main-inner-wrapper"] {
 
     article[role="pge-title-content"],
     article[role="pge-title-content"]{ 
-        padding-left:41px;
+        //padding-left:41px;
         header{ 
             padding-bottom:19px; padding-top:83px;
             h2{ 
                 font-size:46px; line-height:53px; color:#404040; font-weight:800;
-                span{ display:block; font-size:80px; color:#fb5353; padding-bottom:15px}
+                span{ display:block; line-height: 66px;font-size:80px; color:#fb5353; padding-bottom:15px}
             }
         }
         p{ font-size:20px; line-height:30px; color:#454545}
@@ -237,7 +240,7 @@ main[role="main-home-wrapper"],main[role="main-inner-wrapper"] {
 footer[role="footer"]{ 
     background-color:#FFF; padding-top:100px; padding-bottom:77px;
 
-    & > h1 a{ margin:0 auto; display:block; max-width:66px;}
+    & > h1 a{ margin:0 auto; display:inline-block; width: 100px;}
 
     nav{ 
         padding-top:37px; padding-bottom:43px;
@@ -288,6 +291,21 @@ main[role="main-inner-wrapper"] .thumbnails-pan section figure:hover img,section
 
 main[role="main-inner-wrapper"] .thumbnails-pan section figure:hover figcaption{ bottom:0;}
 
+.techno{
+    ul{
+        li{
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            margin: 10px;
+            width: 75px;
+            img{
+                max-height: 75px;
+                margin:0 auto;
+            }
+        }
+    }
+}
 /*===== Blog ===*/
 
 article[role="pge-title-content"].blog-header{ padding-bottom:218px}
