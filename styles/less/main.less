@@ -208,13 +208,16 @@ main[role="main-inner-wrapper"] {
         padding: 0;
     }
     article[role="pge-title-content"],
-    article[role="pge-title-content"]{ 
+    article[role="pge-title-content"]{
+        &.home-intro{
+            text-align: left;
+        }
         //padding-left:41px;
         header{ 
             padding-bottom:19px; padding-top:83px;
             h2{ 
                 font-size:46px; line-height:53px; color:#404040; font-weight:800;
-                span{ display:block; line-height: 66px;font-size:80px; color:@c-primary; padding-bottom:15px}
+                span{ display:block; line-height: 76px;font-size:80px; color:@c-primary; padding-bottom:15px}
             }
         }
         p{ font-size:20px; line-height:30px; color:#454545}
@@ -504,7 +507,10 @@ article[role="pge-title-content"].contact-header p a:hover{color:@c-primary; tex
             p br{ display:none}
             header{ 
                 padding-top:0;
-                h2{ font-size:34px}
+                h2{
+                    font-size:34px;
+                    line-height:39px;
+                }
             }
         }
     }
