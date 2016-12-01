@@ -19,7 +19,7 @@
     "hint.css": "2.4.1"
   },
   "devDependencies": {
-    "less": "~2.5.3"
+    
   },
   "license": "MIT"
 }
