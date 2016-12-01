@@ -139,6 +139,12 @@ a:focus, img:focus, button:focus, .btn:focus {outline: none;}
 .logo{
     width: 100px;
     height: 100px;
+
+    &:hover img{
+        cursor: pointer;
+        -moz-animation:bounceOut .4s linear;
+        -webkit-animation:bounceOut .4s linear;
+    }
 }
 header[role="header"]{ 
     padding-top:80px; padding-bottom:39px;

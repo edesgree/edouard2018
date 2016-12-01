@@ -15,7 +15,8 @@
     "jquery-resize": "*",
     "respond-minmax": "*",
     "html5shiv": "~3.7.2",
-    "font-awesome": "4.7.0"
+    "font-awesome": "4.7.0",
+    "hint.css": "2.4.1"
   },
   "devDependencies": {
     "less": "~2.5.3"
