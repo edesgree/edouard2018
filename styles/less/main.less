@@ -210,6 +210,9 @@ header[role="header"]{
 main[role="main-home-wrapper"],
 main[role="main-inner-wrapper"] {
     padding-bottom:90px;
+    @media @mobile{
+        padding-bottom: 30px;
+    }
     ul{
         padding: 0;
     }
@@ -537,6 +540,7 @@ article[role="pge-title-content"].contact-header p a:hover{color:@c-primary; tex
     .contat-from-wrapper{ margin-top:10px; padding:0 15px}
 
     .grid-lod{
+        margin-bottom: 0;
         li{ 
             width:100% !important; position:static !important; display:inline-block;
             img{ width:100%}
