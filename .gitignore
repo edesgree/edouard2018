@@ -31,7 +31,7 @@ dwsync.xml
 .BridgeSort
 
 
-bower_components/*
+
 node_modules/*
 
 npm-debug.log
