@@ -38,6 +38,7 @@ gulp.task('less', function(){
         .pipe(concat('styles.min.css'))
         .pipe(less({
             modifyVars: {
+                path_bower:'~"../../../bower_components/"' 
                 //path : '~"../../images/build/"' //modification du path des images en prod
             }
         }))
